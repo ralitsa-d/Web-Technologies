@@ -1,0 +1,113 @@
+/* #main{
+    background-color: #defdf1;
+    width: 579px;
+    height: 549px;
+    padding-bottom: 85px;
+    padding-top: 63px;
+    padding-right: 77px;
+    padding-left: 76px;
+} */
+
+body{
+    background-color: #defdf1;
+}
+
+#container{
+    margin: auto;
+    width: 25%;
+    margin-top: 4%;
+    border: 1px solid #558d3d;
+    padding: 33px 33px;
+    overflow: hidden;
+}
+
+input[type=text], input[type=password], input[type=email], select {
+    width: 100%;
+    /* padding: 2% 2%;
+    margin: 2% 0; */
+    margin-bottom:15px;
+    height: 38px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border: 2px solid #acb6a9;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, select:focus {
+    border: 2px solid #558d3d;
+    outline: none;
+}
+
+/* input[type=text]:valid, input[type=email]:valid, input[type=password]:valid, select:valid {
+    outline: none;
+    background-color: white !important;
+} */
+
+#username:hover, #password:hover, #phone:hover, #email:hover, #apartmentNum:hover, select:hover{
+    border: 2px solid #60964b;
+}
+
+
+
+input[type=submit]{
+    color: #5e9448;
+    background-color: #cfe7d9;
+    width: 100%;
+    /* padding: 2% 2%;
+    margin: 2% 0%; */
+    height: 38px;
+    border: 2px solid #acb6a9;
+}
+
+input[type=submit]:focus{
+    outline: none;
+}
+
+input[type=submit]:hover{
+    background-color:#558d3d;
+    color: #cfe7d9;
+}
+
+.hidden{
+    width: 100%;
+    /* padding: 2% 2%;
+    margin: 2% 0; */
+
+    padding-top: 10px;
+    padding-left: 10px;
+    height: 38px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #b0706d;
+}
+#usernameError{
+    display: none;
+}
+#passwordError{
+    display: none;
+}
+#phoneError{
+    display: none;
+}
+#emailError{
+    display: none;
+}
+#apartmentNumError{
+    display: none;
+}
+
+#username{
+    border: 2px solid #acb6a9;
+}
+#password{
+    border: 2px solid #acb6a9;
+}
+#phone{
+    border: 2px solid #acb6a9;
+}
+#email{
+    border: 2px solid #acb6a9;
+}
+#apartmentNum{
+    border: 2px solid #acb6a9;
+}

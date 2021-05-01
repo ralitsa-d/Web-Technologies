@@ -1,0 +1,12 @@
+form{
+    margin: 2rem;
+}
+.error{
+    color: red;
+}
+#success{
+    color:green;
+}
+#firstdiv{
+    width:600px;
+}

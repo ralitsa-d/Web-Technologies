@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 20px;
+    font-family: 'Raleway',sans-serif;
+}
+h2{
+    border: solid 1px;
+    border-radius: 7px;
+    text-align: center;
+    padding: 1%;
+    margin-bottom: 3%;
+    background-color: silver;
+    
+}
+
+#navigation{
+    position: -webkit-sticky;
+    position: sticky; /* Make it stick, even on scroll */
+    top: 0;
+    padding-top:5%;
+    height: 1.78%;
+}
+
+#navigation_ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #555;
+    list-style-position: inside;
+    /* display: inline; */
+    height: 100%; 
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+}
+
+
+
+#navigation_ul li a{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    
+}
+
+#navigation_ul li a:hover {
+    background-color: rgb(255, 209, 212);
+    /* background-color: #555;
+    color: white; */
+}
+#navigation_ul li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+    background-color: rgb(228, 234, 237);
+}
+#navigation_ul li:last-child {
+    border-bottom: none;
+}
+
+#navigation .navToggle a{
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+#navigation .navToggle a:hover{
+    background-color: rgb(255, 209, 212);
+    /* background-color: #555;
+    color: white; */
+}
+  
+
+article{
+    padding-bottom: 5%;
+}
+
+strong{
+    font-family: 'RalewayArial', 'Helvetica', sans-serif;
+}
+
+#list{
+    position: sticky;
+    background-color: bisque;
+}
+#nav-list{
+    position: sticky;
+    width: 16%;
+    background-color: #DDDDDD;
+}
+
+#articles{
+    width: 80%;
+    background-color: cadetblue;
+}
+
+.panels{
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 6px;
+    text-align:center;
+}
+
+
+
+.colorRed{
+    background-color: rgb(245, 81, 44);
+}
+
+.div-header{
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: bisque;
+}
+
+#panels{
+    padding-top: 5%;
+}
+#jumbotron{
+    margin: 0 auto;
+}
+
+h1{
+    
+    margin-top:2%;
+}
+
+.row{
+    padding:2%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+  }
+
+.special{
+    color: red;
+}
+.special1{
+    color:red;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.italic{
+    font-style: italic;
+}
+
+.buttons1{
+    position: relative;
+}
+
+.btn{
+    position: relative;
+}
+
+#aboutme{
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+}

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" href="pictures/jquery_logo.png">
+    <title>Библиотека jQuery</title>
+</head>
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <h1>Библиотека jQery</h1>
+            </div>
+            <div class="col-3">
+                <img src="pictures/logo.png" alt="лого">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+
+            <div class="col-3">
+                <div id="navigation">
+                    <h3>Съдържание</h3>
+                    <ul id="navigation_ul">
+                        <li><a href="#a1" id="nav-link1">Основи на JavaScript</a></li>
+                        <div id="navToggle1" class="navToggle" style="display: none;">
+                            <a href="#promenlivi">  Променливи</a>
+                            <a href="#funkcii">  Функции</a>
+                            <a href="#obekti">  Обекти</a>
+                            <a href="#masivi">  Масиви</a>
+                            <a href="#logicheski">  Логически оператори</a>
+                        </div>
+                        <li><a href="#a2" id="nav-link2">Манипулации на DOM чрез JavaScript</a></li>
+                        <div id="navToggle2" class="navToggle" style="display: none;">
+                            <a href="#htmlDOM">Какво е HTML DOM?</a>
+                            <a href="#manipDOM">Как можем да манипулираме DOM чрез JavaScript?</a>
+                        </div>
+                        <li><a href="#a3" id="nav-link3">Какво е jQuery?</a></li>
+                        <div id="navToggle3" class="navToggle" style="display: none;">
+                            <a href="#kakdaizpolzvame">Как да използваме jQuery?</a>
+                            <a href="#jqueryBasics">Основи на jQuery</a>
+                            <a href="#izvlichane_na_elementi">Извличане на елементи</a>
+                            <a href="#sazdavane_premahvane">Създаване и премахване на елементи</a>
+                            <a href="#postavqne_na_elementi">Поставяне на елементи</a>
+                            <a href="#kakvo_mojem_da_pravim">Какво можем да правим с извлечените елементи?</a>
+                        </div>
+                        <li><a href="#a3.1" id="nav-link31">Работа с Ajax</a></li>
+                        <div id="navToggle31" class="navToggle" style="display: none">
+                            <a href="#xmlhttp">Обект от тип XMLHttpRequest и изпращане на заявка към сървър</a>
+                            <a href="#jquery_ajax">jQuery и Ajax</a>
+                        </div>
+                        <li><a href="#a4">Събития и обработка на събития с jQuery</a></li>
+                        <li><a href="#a5" id="nav-link5">Ефекти с jQuery</a></li>
+                        <div class="navToggle" id="navToggle5" style="display: none;">
+                            <a href="#pr1">Пример 1 - Някои функции в jQuery</a>
+                            <a href="#pr2">Пример 2 - "DRY"</a>
+                            <a href="#pr3">Пример 3 - Обхождане на DOM</a>
+                        </div>
+                        <li><a href="#a5.1" >Сравнение между чист JavaScript и jQuery</a></li>
+                        <li><a href="#a6">Източници</a></li>
+                        <li><a href="#a7">Фигури</a></li>
+                        <li><a href="#a8">Таблици</a></li>
+                        <li><a href="#a9">За автора</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            
+
+
+            <div class="col-9">
+            <article id="a1">
+                <h2>Основи на JavaScript</h2>
+                <p>За да разберем по-добре разликите и предимствата на библиотеката jQuery, спрямо чист JavaScript, 
+                    преди това ще се запознаем с основите на JavaScript. 
+                    <!-- Този раздел обхваща 
+                    основните понятия в JavaScript, както и някои често допускани грешки.  -->
+                    Нека накратко споменем 
+                    градивните му елементи.</p>
+                <div class="jumbotron" id="promenlivi">
+                    <h3>Променливи</h3>
+                    <p>Чрез тях можем да запазваме стойности и да ги използваме по-късно. Променливите могат да 
+                        съдържат текст, числа, данни (като масиви и обекти), а също и фрагменти код (под формата на функции).
+                        За да създадем локална променлива, използваме думата <strong>var</strong> . 
+                        <!-- Имената на променливите 
+                        не могат да започват с число, както и не могат да съдържат тире.  -->
+                        Можем да използваме браузъра, за 
+                        да създадем променлива. В JavaScript не е нужно да указваме типа на променливата, 
+                        но можем да го видим с <em>typeof</em>. <a href="#a6">[1.]</a>
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i1" src="pictures/variables.PNG" alt="variables-example">
+                                <figcaption>Фиг. 1. Екранна снимка. Създаваме променлива в браузъра и виждаме нейния тип.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="jumbotron" id="funkcii">
+                    <h3>Функции</h3>
+                    <p>Нека разгледаме следния пример.</p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i2" src="pictures/function.PNG" alt="функция която събира две числа">
+                                <figcaption>Фиг. 2. <a href="#a6">[1.]</a> "jQuery Fundamentals".
+                                     Функция, която намира сумата на две променливи.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <p>Тази функция приема два параметъра и връща тяхната сума. Тя е валидна, но няма как да извикаме резултата, 
+                        който е върнала. Можем да я направим по-използваема по следния начин:
+                    </p> 
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i3" src="pictures/function1.PNG" alt="функцията запазваме в променлива">
+                                <figcaption>Фиг. 3. <a href="#a6">[1.]</a> "jQuery Fundamentals". Запазваме резултата от функцията в променлива.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <p>
+                        По-късно можем да използваме тази променлива, като след името й подадем параметрите, нужни за функцията.
+                        Например, <strong>addTwoNumbers(3, 7)</strong>. <a href="#a6">[1.]</a>
+                    </p>
+                    <!-- <p>Областта на действие на променливите, декларирани с <em>var</em> във функция, е тялото на самата фунция. 
+                        Можем да декларираме променлива и без <em>var</em>, тогава тя е глобална променлива и може да бъде
+                       използвана и извън тялото на функцията, но не е препоръчително да използваме глобални променливи.
+                    </p> -->
+                </div>
+                <div class="jumbotron" id="obekti">
+                    <h3>Обекти</h3>
+                    <p>Почти всичко с което работим в JavaScript e обект, с изключение на:</p>
+                        <ul>
+                            <li>string</li>
+                            <li>boolean</li>
+                            <li>number</li>
+                            <li>undefined</li>
+                            <li>null</li>
+                        </ul>
+                        Тези стойности се наричат <em>примитиви</em>. 
+                        <p>Нека създадем обект <strong>човек</strong> със следните атрибути. </p>
+                        <div class="row">
+                            <div class="col-7">
+                                <figure>
+                                    <img id="i4" src="pictures/object1.PNG" alt="създаваме обект човек">
+                                    <figcaption>Фиг. 4. Екранна снимка. Създаваме обект person и извеждаме името и фамилията му.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <p>Има два вида нотации за достъпване на атрибутите - нотация с точка и нотация със скоби, 
+                            които се виждат на фигура 4. Втората е удобна за случаите, в които сме запазили в променлива името на атрибута,
+                            който търсим. Тогава в скобите поставяме само името на променливата, както на фигура 5. <a href="#a6">[1.]</a>
+                        </p>
+                        <div class="row">
+                            <div class="col-7">
+                                <figure>
+                                    <img id="i5" src="pictures/object2.PNG" alt="second notation for accessing property">
+                                    <figcaption>Фиг. 5. Екранна снимка. Нотация със скоби.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    
+                    <!-- <p>
+                        Методите на обект са атрибути, чиято стойност е функция. Можем да добавим метод "Say Hello" към нашия 
+                        обект човек, като й подадем някакъв аргумент.
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img src="pictures/Method.PNG" alt="adding a method">
+                                <figcaption>Фиг. 6. Екранна снимка. Добавяне на метод SayHello, към класа, чийто обект е person.</figcaption>
+                            </figure>
+                        </div>
+                    </div> -->
+                    <!-- <p>За всеки метод имаме ключовата дума <strong>this</strong>. 
+                        Той се отнася до обекта, който е контекстът, в който е била извикана функцията.
+                        Можем да достъпим атрибут на person директно от метода SayHello. Например, в метода SayHello можем 
+                        директно да напишем <strong>console.log("Hello, " + this.firstName)</strong>, а при извикването му - 
+                        <strong>person.SayHello()</strong>
+                        Ако, обаче, присвоим <strong>person.SayHello</strong> на променлива <strong>var greet</strong>, 
+                        и след това извикаме <strong>greet()</strong>, 
+                        това ще бъде грешка, защото this вече отговаря за глобалния обект, а не за обекта person. 
+                        Все пак, методите 
+                        <strong>.call()</strong> и <strong>.apply()</strong> ни позволяват в този случай да подадем 
+                        аргументите, които са ни нужни.
+                    </p> -->
+                </div>
+
+                <div class="jumbotron" id="masivi">
+                    <h3>Масиви</h3>
+                    <p>Това са обекти, използвани за съхранение на множество от стойности, като в JavaScript не е
+                        задължително тези стойности да са от един и същи тип. Елементите на масива достъпваме по познатия начин 
+                        чрез скобите [], в които пишем индекса на елемента, който искаме да достъпим. Индексите започват от нула.
+                        <a href="#a6">[1.]</a>
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i6" src="pictures/array.PNG" alt="обхождане на масив">
+                                <figcaption>Фиг. 6. Екранна снимка. Обхождане на елементите на масив.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jumbotron" id="logicheski">
+                    <h3>Логически оператори</h3>
+                    <p>Tе ни позволяват да оценяваме операнди чрез операциите && (и) и || (или). На фигура 7 виждаме, че при 
+                        използването на ||, ако поне една от стойностите е истина, връща <em>истина</em>, а ако няма стойност, 
+                        която да се оценява като <em>истина</em>, тогава връща последната стойност. 
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i7" src="pictures/logical.PNG" alt="Логически оператори">
+                                <figcaption>Фиг. 7. Екранна снимка. Логическият оператор || връща стойността на последния 
+                                    елемент, ако няма нито един елемент, който да е истина.
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <p>При оператор && върнатата стойност е първата стойност, 
+                                която доказва неверността на твърдението, или последната стойност.
+                                <a href="#a6">[1.]</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- <p>Често искаме да дадем различна стойност на променлива, 
+                        в зависимост от дадено условие. Можем да използваме <em>if</em> и <em>else</em>, но 
+                        <strong>тернарният оператор</strong> 
+                        ни дава значително по-съкратен запис.
+                    </p>
+                    <div class="row">
+                        <div class="col-9">
+                            <figure>
+                                <img src="pictures/ternary.PNG" alt="Логически оператори">
+                                <figcaption>Фиг. 9. <a href="#a6">[1.]</a> "jQuery Fundamentals". В propertyName запазваме стойността на clientWidth, ако условието в 
+                                    скобите е изпълено, а ако не е - запазваме стойността на clientHeight.</figcaption>
+                            </figure>
+                        </div>
+                    </div> -->
+                    <p>Трябва да сме наясно и с разликата между операторите == и ===. </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <figure>
+                                <img id="i8" src="pictures/==.PNG" alt="Логически оператори">
+                                <figcaption>Фиг. 8. <a href="#a6">[1.]</a> "jQuery Fundamentals". Операторът == преобразува двете стойности, така че да са от 
+                                    един и същи тип.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <p>Двойно равно (==) е оператор за сравняване, който трансформира операндите, 
+                                така че да имат един и същ тип преди да бъдат сравнени. <br>
+                                <!-- Например, ако сравняваме число със символен низ, 
+                                JavaScript трансформира символния низ в число. Ако символния низ не е с числова стойност, тогава той се 
+                                трансформира в NaN (Not a Number), което връща <em>лъжа</em>. <br> -->
+                                Тройното равно (===) е по-стриктен оператор за сравнение, който връща <em>лъжа</em>, ако стойностите, 
+                                които се сравняват не са от един и същи тип. <a href="#a6">[3.]</a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </article>
+
+            <article id="a2">
+                <h2>Манипулации на DOM (Document Object Model) чрез JavaScript</h2>
+                <!-- <p>Моделът DOM е конструиран като дърво от обекти. Чрез JavaScript можем да създаваме динамичен HTML.</p>
+                <ul>
+                    <li>JavaScript може да променя всички HTML елементи в страницата.</li>
+                    <li>JavaScript може да променя всички HTML атрибути в страницата.</li>
+                    <li>JavaScript може да променя CSS стиловете в страницата.</li>
+                    <li>JavaScript може да премахва съществуващи HTML елементи и атрибути.</li>
+                    <li>JavaScript може да добавя нови HTML елементи и атрибути.</li>
+                    <li>JavaScript може да реагира на всички съществуващи HTML събития в страницата.</li>
+                    <li>JavaScript може да създава нови HTML събития в страницата.</li>
+                </ul> -->
+                <h3 id="htmlDOM">Какво е HTML DOM?</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <p>Моделът DOM е конструиран като дърво от обекти. Това е стандартен обектен модел и интерфейс за програмиране за HTML, който дефинира:</p>
+                        <ul>
+                            <li>HTML елементите като обекти</li>
+                            <li>Атрибутите на всички HTML елементи</li>
+                            <li>Методите за достъп до всички HTML елементи</li>
+                            <li>Събитията за всички HTML елементи</li>
+                        </ul>
+                        <p>
+                            <strong>Атрибутът</strong> е стойност, която можем да извлечем или променим.
+                        </p>
+                        <p>
+                            <strong>Методът</strong> е действие, което можем да извършим 
+                            (като добавянето или изтриването на HTML елемент).
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <figure>
+                            <img id="i9" src="pictures/DOM.gif" alt="DOM">
+                            <figcaption>Фиг. 9. <a href="#a6">[2.]</a> w3schools. Document Object Model.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+                <p>В примера на фигура 10, <strong><em>getElementById</em></strong> e методът, 
+                    а <strong><em>innerHtml</em></strong> е атрибутът. 
+                    Това е пример как можем да променяме или да добавяме текст в даден HTML документ. 
+                    Също, е и пример за 
+                    най-често срещания начин да се достъпи елемент - чрез неговото <em>id</em>, както и за това, че най-лесния 
+                    начин да извлечем съдържанието на даден елемент, е като използваме атрибута му <em>innerHtml</em>. <a href="#a6">[2.]</a>
+                </p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i10" src="pictures/getElementById.PNG" alt="Логически оператори" style="border: solid 1px;">
+                            <figcaption>Фиг. 10. <a href="#a6">[2.]</a> w3schools. Промяна на HTML на елемент с id="demo".</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <h3 id="manipDOM">Как можем да манипулираме DOM чрез JavaScript?</h3>
+                <p>HTML DOM документът е обект, който съдържа всички останали обекти в дадена интернет страница. Той я представлява. 
+                    Затова, ако искаме да достъпим елемент от страницата, първо трябва да достъпим обекта <em>document</em>. Ето някои 
+                    други методи, чрез които можем да достъпваме конкретни елементи: 
+                    <ul>
+                        <li>document.getElementsByTagName(name)</li>
+                        <li>document.getElementsByClassName(name)</li>
+                    </ul>
+                    Това означава, че можем да достъпваме елементи с конкретен таг, или елементи от даден клас, но в 
+                    повечето случаи тези методи ще върнат колекция от елементи, тъй като рядко се случва да имаме само един 
+                    елемент с атрибут този клас, или да имаме само един елемент от даден таг. <a href="#a6">[2.]</a>
+                </p>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="pictures/picture7.jpg" alt="картинка">
+                    </div>
+                    <div class="col-6">
+                        <p>Някои методи за променяне на HTML елементи са:
+                            <ul>
+                                <li>element.innerHTML =  new html content</li>
+                                <li>element.attribute = new value</li>
+                                <li>element.style.property = new style</li>
+                                <li>element.setAttribute(attribute, value)</li>
+                            </ul>
+                        </p>
+                        <p>Някои методи за добавяне и изтриване на елементи са:
+                            <ul>
+                                <li>document.createElement(element)</li>
+                                <li>document.removeChild(element)</li>
+                                <li>document.appendChild(element)</li>
+                                <li>document.replaceChild(new, old)</li>
+                                <li>document.write(text)</li>
+                            </ul>
+                            Методът <em>write</em> пише в изходния HTML поток. <a href="#a6">[2.]</a>
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- <p>Добавяме реагиране на събитие по следния начин: 
+                    <strong>document.getElementById(id).onclick = function(){code}</strong></p>
+                <p>
+                    Интересно е добавянето на event listeners. Синтаксисът е следният: 
+                    <strong>element.addEventListener(event, function, useCapture)</strong>. Първият параметър е събитието, за което слушаме. Може 
+                    да бъде onclick, mousedown, onchange, onmouseover и т.н. Вторият параметър е фунцкията, която искаме да 
+                    извикаме, когато това събитие се случи. Третият параметър не е задължителен. Той е булева стойност, която 
+                    указва 
+                </p> -->
+
+                <p>Нека да разгледаме следния пример за манипулация на DOM чрез JavaScript. В полето трябва да изпишем пълния имейл, 
+                    който искаме да изтрием. При събитието "натискане на бутона DELETE", се изпълнява функция, която 
+                    изтрива посочения имейл.
+                </p>
+                <div class="row">
+                    <div class="col-4">
+                        <table id="customers">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>eve@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Nick</td>
+                                <td>nick@yahooo.com</td>
+                            </tr>
+                            <tr>
+                                <td>Didi</td>
+                                <td>didi@didi.net</td>
+                            </tr>
+                            <tr>
+                                <td>Tedy</td>
+                                <td>tedy@tedy.com</td>
+                            </tr>
+                        </table>
+                    
+                        <div class="divs">
+                            Email:
+                            <label>
+                                <input type="text" name="email"/>
+                            </label>
+                            <button onclick="deleteByEmail()">Delete</button>
+                            <div class="divs" id="result"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-8">
+                        <figure>
+                            <img id="i11" src="pictures/deleteFunction.PNG" alt="Логически оператори">
+                            <figcaption>Фиг. 11. Екранна снимка. Функция deleteByEmail.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <p>Забелязваме, че когато премахваме елемент, преди да извикаме метода 
+                    <em><strong>.removeChild(trs[i])</strong></em>, 
+                    първо достъпваме <strong><em>.parentNode</em></strong>, 
+                    което е доста тромав начин за манипулация на елементите на 
+                    HTML страницата. По-надолу ще видим как можем да направим това чрез jQuery.
+                </p>
+            </article>
+                
+
+            <article id="a3">
+                <h2>Какво е jQuery?</h2>
+                <p>jQuery е бърза и компактна JavaScript библиотека, създадена от Джон Резиг през 2006 г. с девиза: 
+                    "Пишете по-малко, правете повече" (Write less, do more). 
+                    jQuery опростява обхождането на HTML документи, обработката на събития, анимирането и 
+                    взаимодействието с Ajax (в секцията "Работа с Ajax" ще дадем повече информация). jQuery е JavaScript инструментариум, предназначен да опрости различни 
+                    задачи, с писане на по-малко код. <a href="#a6">[4.]</a>
+                </p>
+                <div class="jumbotron" id="kakdaizpolzvame">
+                    <h3>Как да използваме jQuery?</h3>
+                    <p>Има два начина:
+                        <ol>
+                            <li>Чрез инсталиране локално: Можем да изтеглим библиотеката на нашата машина и да я включим в 
+                                HTML документа ни. Можем да я свалим от <a href="https://jquery.com/download" target="_blank">https://jquery.com/download</a> , 
+                                след което трябва да добавим изтегления <strong>jquery-3.5.1.min.js</strong> 
+                                файл в папката на нашия проект 
+                                и да го включим като &ltscript&gt в HTML документа. 
+                                (Добра практика е да го поставим в края на HTML документа.) Съществуват компресирана (.min.js) и 
+                                некомпресирана версия. Некомпресираният файл се използва най-добре по време на разработка 
+                                или отстраняване на грешки; компресираният файл подобрява 
+                                производителността. <a href="#a6">[4.]</a>
+                                <p><strong>Забележка:</strong> когато включваме даден &ltscript&gt, който използва 
+                                    jQuery методи към проекта ни, 
+                                    трябва да го напишем след включването на библиотеката jQuery, защото иначе 
+                                    нашия &ltscript&gt няма да работи.
+                                </p>
+                            </li>
+                            <li>
+                                Можете да включите jQuery библиотека във вашия HTML код директно от 
+                                мрежата за доставка на съдържание (CDN). <br>
+                                <strong>&ltscript src="https://code.jquery.com/jquery-3.1.0.min.js"
+                                    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+                                    crossorigin="anonymous"&gt&lt/script&gt</strong>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+                <h5>Възможности, които jQuery предоставя</h5>
+                <p>Библиотеката jQuery улеснява манипулацията на HTML страниците, след като са показани от браузъра. Също 
+                    така, тя предоставя и инструменти, които ни помагат да следим за интеракции от страна на потребителя със 
+                    страницата, както и инструменти, с чиято помощ можем да създаваме анимации, и такива, които ни 
+                    позволяват да комуникираме със сървър, без да презареждаме страницата. <a href="#a6">[1.]</a> 
+                </p>
+                <div class="jumbotron" id="jqueryBasics">
+                    <h3>Основи на jQuery</h3>
+                    <p>Библиотеката предоставя функцията jQuery, която ни позволява да избираме елементи, използвайки 
+                        CSS селектори. 
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i12" src="pictures/jQueryfunc.PNG" alt="Функция jQuery">
+                                <figcaption>Фиг. 12. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                    Селектираме всички елементи <mark>&ltli&gt</mark> от HTML документа.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+    
+                    <p>По-често срещано е, обаче, вместо функцията jQuery, да се използва просто <strong>$</strong>, който е по-кратка и 
+                    по-удобна версия на функцията jQuery.</p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i13" src="pictures/func$.PNG" alt="Функция $">
+                                <figcaption>Фиг. 13. <a href="#a6">[1.]</a> "jQuery Fundamentals". Селектираме всички елементи <mark>&ltli&gt</mark> от HTML документа.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <p>Когато извикаме функцията <strong>$ ()</strong> и й подадем даден селектор, създаваме нов обект jQuery. 
+                        Тъй като в JavaScript функциите са обекти, това означава, че $ 
+                        също има свойства и методи. Например, можем да се обърнем към свойството 
+                        <strong>$ .support</strong> за информация какво поддържа текущата среда на браузъра или да използваме метода 
+                        <strong>$ .ajax</strong>, за да направим AJAX заявка. <a href="#a6">[1.]</a>
+                    </p>
+                    <p>Преди да започнем да използваме jQuery, първо трябва да се подсигурим, че страницата е в състояние на 
+                        готовност за манипулации. Постигаме това като поставяме кода си във функция, която подаваме като аргумент 
+                        на <strong>$(document).ready()</strong>.
+                        <div class="row">
+                            <div class="col-7">
+                                <figure>
+                                    <img id="i14" src="pictures/documentReady.PNG" alt="$(document).ready()">
+                                    <figcaption>Фиг. 14. <a href="#a6">[1.]</a> "jQuery Fundamentals". Функцията .ready().</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        На примера на фигура 14 използваме $(document), за да създадем jQuery обект от нашия <em>document</em>,
+                        за който викаме функцията <em>.ready()</em>, като й подаваме функцията, която искаме да изпълним. Нека онагледим 
+                        използването на .ready() със следния пример.
+                        <div class="row">
+                            <div class="col-4">
+                                <div id="my_div" style="border: solid 2px;">
+                                    <p style="padding: 2%;">Кликни тук и виж какво ще стане!</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <figure>
+                                    <img id="i15" src="pictures/ready1.PNG" alt="онагледяване на .ready()">
+                                    <figcaption>Фиг. 15. Екранна снимка. Използване на .ready().</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </p> 
+                    <p>
+                    Тъй като 
+                    това се използва често, за наше удобство, функцията <strong>$</strong> автоматично прави това, 
+                    така че можем директно да 
+                    напишем следното:
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i16" src="pictures/$ready.PNG" alt="$(document).ready() - само със $">
+                                <figcaption>Фиг. 16. <a href="#a6">[1.]</a> "jQuery Fundamentals". Функцията <strong>$</strong> се грижи за това.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                
+                
+
+
+                <div class="jumbotron" id="izvlichane_na_elementi">
+                    <h3>Извличане на елементи</h3>
+                        <p>Извличането на елементи в jQuery става най-лесно чрез използването на CSS селекторите. 
+                            Например, <strong>$( 'ul li' );</strong> ще върне колекция от всички елементи на ненареден списък, а 
+                            <strong>$( '.person' );</strong> връща всички елементи от клас person. Важно е да знаем, че когато селектираме 
+                            елементи, върнатата колекция ще съдържа само елементи, които са съществували в HTML страницата, когато се е 
+                            изпълнявал кода на нашата функция. Така например, ако имаме функция, която извлича всички елементи на 
+                            ненареден списък, и по-късно добавим нов елемент към списъка, то върнатата колекция няма да го съдържа.
+                        </p>
+                    <h4>Как да проверим дали сме извлякли успешно елементи?</h4>
+                    <p>За да проверим дали сме извлякли успешно елементите, които сме указали, не е достатъчно, 
+                        като условие в if-клауза да напишем <strong>$('#id_of_an_element')</strong>, защото jQuery винаги връща обект, 
+                        т.е. това условие винаги ще е истина. За да извършим проверката, трябва да напишем 
+                        <strong>$('#id_of_an_element').length > 0</strong>. <a href="#a6">[1.]</a>
+                    </p>
+                    <h4>Как да извличаме единичен елемент от колекция?</h4>
+                    <p>Често ще искаме да извършваме действия върху единични DOM обекти, но трябва да знаем, че не можем 
+                        да използваме jQuery методи за DOM елементи, а само за jQuery обекти. Затова, 
+                        кодът на фигура 17 няма да работи. По-надолу, в сравнението между функциите 
+                        <mark>deleteByEmail</mark> и <mark>deleteByEmail_jQuery</mark>, свързани с примера за 
+                        изтриване на имейл от таблица (фигури 23 и 24), можем да видим, че jQuery методът <strong>.text()</strong> 
+                        не може да бъде приложен върху DOM елемента <strong>trs[i].cells[1]</strong>. За да можем да използваме този метод, 
+                        трябва да превърнем DOM елемента, в jQuery елемент <strong>($(trs[i].cells[1]))</strong>. Върху този jQuery 
+                        обект можем да приложим jQuery методът <strong>.text()</strong>.
+                    </p> 
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i17" src="pictures/right.PNG" alt="неверен код">
+                                <figcaption>Фиг. 17. <a href="#a6">[1.]</a> "jQuery Fundamentals". Грешен код.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <p>
+                        Вместо това, можем да използваме методът <strong>.eq()</strong>, на който подаваме индекса на елемента, 
+                        с които искаме да работим, по следния начин: 
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i18" src="pictures/right1.PNG" alt="правилен код">
+                                <figcaption>Фиг. 18. <a href="#a6">[1.]</a> "jQuery Fundamentals". Правилен код.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <p><mark>secondListItem</mark> вече е jQuery обект, така че върху него може да се приложи jQuery метод.
+                    </p>
+                    
+                </div>
+                
+                <div class="jumbotron" id="sazdavane_premahvane">
+                    <h3>Създаване и премахване на елементи</h3>
+                    <p>Чрез функцията <strong>$</strong> можем да създаваме нови елементи. Ще разгледаме как става това 
+                        чрез следните примери, показани на фигури 19 и 20.
+                    </p> 
+                        <div class="row">
+                            <div class="col-9">
+                                <figure>
+                                    <img id="i19" src="pictures/CreatePara.PNG" alt="пример как да създаваме елемент">
+                                    <figcaption>Фиг. 19. <a href="#a6">[1.]</a> "jQuery Fundamentals". Създаване на нов елемент.</figcaption>
+                                </figure>
+                                <figure>
+                                    <img id="i20" src="pictures/CreatePara2.PNG" alt="втори пример как да създадем елемент">
+                                    <figcaption>Фиг. 20. <a href="#a6">[1.]</a> "jQuery Fundamentals". Друг начин за създаване на нов елемент.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    <p>Чрез функциите <strong>.remove()</strong>, <strong>.detach()</strong> и <strong>.replaceWith()</strong> 
+                        можем да премахнем елемент от DOM дървото. Нека разгледаме тези функции една по една.
+                    </p>
+                    <ul>
+                        <li>
+                            <p><strong>.remove()</strong> се използва най-вече за изтриване на елемент за постоянно. 
+                                Функцията връща 
+                                референция към изтрития елемент, но ако към премахнатия елемент е билo прикрепено някакво 
+                                събитие и по-късно добавим към DOM този елемент наново, 
+                                събитието няма да остане прикачено към него. 
+                            </p>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <figure>
+                                            <img id="i21" src="pictures/remove().PNG" alt=".remove()">
+                                            <figcaption>Фиг. 21. <a href="#a6">[1.]</a> "jQuery Fundamentals". Можем да запазим премахнат елемент.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <p>Ако в примера на фигура 21 вместо .remove() използваме <strong>.detach()</strong>, тогава премахваме елемента, 
+                                но само временно. Елементите, които са премахнати с .detach() запазват своите реакции на събития, които 
+                                са прикачени към тях.
+                            </p>
+                        </li>
+                        <li>
+                            <p><strong>.replaceWith()</strong> може да заменя даден елемент от HTML страницата с нов, който се 
+                                подава като аргумент. Също както и при .remove(), се пази референция към изтритите 
+                                елементи, но свързаните с тях реакции на събития не се запазват. <a href="#a6">[1.]</a>
+                            </p>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <figure>
+                                            <img id="i22" src="pictures/replaceWith.PNG" alt=".replaceWith()">
+                                            <figcaption>Фиг. 22. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                                Заместване на първия елемент на ненареден списък с нов елемент.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                        </li>
+                    </ul>
+                    <p>Нека отново да разгледаме примера с изтриването на имейли от таблица</p>
+                    <div class="row">
+                        <div class="col-5">
+                            <article>
+                                <table style="border: 1px;" id="customers-example">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Eve</td>
+                                        <td>eve@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nick</td>
+                                        <td>nick@yahooo.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Didi</td>
+                                        <td>didi@didi.net</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tedy</td>
+                                        <td>tedy@tedy.com</td>
+                                    </tr>
+                                </table>
+                            
+                                <div>
+                                    Email:
+                                    <label>
+                                        <input type="text" name="email-example"/>
+                                    </label>
+                                    <button id="my_btn1">Delete</button>
+                                    <div id="result-example"></div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="col-7">
+                            <img src="pictures/picture1.png" alt="картинка">
+                        </div>
+                    </div>
+                    
+
+                    <p>Ще съпоставим кода само с JavaScript и този с jQuery.</p>
+                    <div class="row">
+                        <div class="col-9">
+                            <figure>
+                                <img id="i23" src="pictures/deleteFunction.PNG" alt="функция за триене на имейл само с JavaScript">
+                                <figcaption>Фиг. 23. Екранна снимка. Функция за триене на имейл само с JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                   <div class="row">
+                       <div class="col-9">
+                        <figure>
+                            <img id="i24" src="pictures/deleteEmail_jQuery.PNG" alt="функция за триене на имейл чрез jQuery">
+                            <figcaption>Фиг. 24. Екранна снимка. Функция за триене на имейл с помощта на jQuery.</figcaption>
+                        </figure>
+                       </div>
+                   </div>
+                        
+                </div>
+
+                <div class="jumbotron" id="postavqne_na_elementi">
+                    <h3>Поставяне на елементи в HTML документ</h3>
+                    <p>Вече знаем как да създаваме елементи чрез jQuery, но тези елементи няма да имат смисъл, ако не знаем как 
+                        да ги добавим към DOM дървото. Обикновено има два начина да направим това: 
+                        чрез извикване на метод върху елемента, който искаме да поставим, или чрез 
+                        извикване на метод върху елемента, <em>спрямо който</em> искаме да го поставим. Методите, 
+                        които ще използваме са <strong>.appendTo()</strong> и <strong>append()</strong>. 
+                        <a href="#a6">[1.]</a> "Traversing & Manipulation" <br>
+                        Нека да разгледаме следните примери:
+                        <div class="row">
+                            <div class="col-7">
+                                <figure>
+                                    <img id="i25" src="pictures/appendTo().PNG" alt="пример за appentTo()">
+                                    <figcaption>Фиг. 25. <a href="#a6">[1.]</a> "jQuery Fundamentals". Използване на .appendTo().</figcaption>
+                                </figure>
+                                <figure>
+                                    <img id="i26" src="pictures/append().PNG" alt="пример за append()">
+                                    <figcaption>Фиг. 26. <a href="#a6">[1.]</a> "jQuery Fundamentals". Използване на .append().</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-5">
+                                <img src="pictures/picture4.png" alt="картинка">
+                            </div>
+                        </div>
+                    </p>
+                    <p>По подобен начин можем да използваме и методите <strong>insertAfter()</strong> и <strong>after()</strong>. 
+                        В примерите на фигури 27 и 28 извличаме всички елементи на ненареден списък 
+                        с <mark>id = 'my-unordered-list'</mark>, след което добавяме първият елемент като последен. <a href="#a6">[1.]</a>
+                    </p>
+                        <div class="row">
+                            <div class="col-7">
+                                <figure>
+                                    <img id="i27" src="pictures/insertAfter().PNG" alt="пример за insertAfter()">
+                                    <figcaption>Фиг. 27. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                        Добавяне на първия елемент като последен.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7">
+                                <figure>
+                                    <img id="i28" src="pictures/after().PNG" alt="пример за after()">
+                                    <figcaption>Фиг. 28. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                        Втори начин да добавим първия елемент като последен.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    <p>По аналогичен начин можем да използваме методи като <strong>around</strong>, 
+                        <strong>inside</strong> и <strong>outside</strong>.
+                    </p>
+                    <h3>Копиране на елементи</h3>
+                    <p>Чрез метода <strong>.clone()</strong> можем да създаваме идентични колекции, след което да ги манипулираме и да 
+                        ги добавим отново в HTML документа. На фигури 29 и 30 можем да видим пример за това 
+                        и резултата, при изпълнение на този код. <a href="#a6">[5.]</a>
+                    </p>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i29" src="pictures/clone.PNG" alt="пример за clone()">
+                                <figcaption>Фиг. 29. Екранна снимка. Копиране на елементи и модифициране.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <ol id="my_ordered_list">
+                                <li class="list_item" style="color:red;">HTML</li>
+                                <li class="list_item">CSS</li>
+                                <li class="list_item">JavaScript</li>
+                            </ol>
+                        </div>
+                        <div class="col-2">
+                            <button id="my_btn">
+                                Кликни тук!
+                            </button>
+                        </div>
+                        <div class="col-3">
+                            <p>Фиг. 30 Изпълнение на кода от фигура 29.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jumbotron" id="kakvo_mojem_da_pravim">
+                    <h3>Какво можем да правим с извлечените елементи?</h3>
+                    <p>Преди да покажем още jQuery методи, които можем да използваме, нека дефинираме някои понятия, 
+                        използвайки следния HTML код, от фигура 31.
+                        <div class="row">
+                            <div class="col-5">
+                                <figure>
+                                    <img id="i31" src="pictures/html.PNG" alt="HTML код">
+                                    <figcaption>Фиг. 31. <a href="#a6">[1.]</a> "jQuery Fundamentals".</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-5">
+                                <p>
+                                    Първото <mark>&ltli&gt</mark> e <strong>дете</strong> (<strong>child</strong>) на <mark>&ltul&gt</mark>. <br>
+                                    <mark>&ltul&gt</mark> e <strong>родител</strong> (<strong>parent</strong>) на двете <mark>&ltli&gt</mark>. <br>
+                                    <mark>&ltspan&gt</mark> е <strong>наследник</strong> (<strong>descendant</strong>) на <mark>&ltul&gt</mark>. <br>
+                                    <mark>&ltul&gt</mark> е <strong>предшественик</strong> (<strong>ancestor</strong>) на всичко вътре в него. <br>
+                                    Двете <mark>&ltli&gt</mark> са <strong>братя</strong> (<strong>siblings</strong>). <a href="#a6">[1.]</a> <br>
+                                </p>
+                            </div>
+                        </div>
+                    </p>
+                    <ol>
+                        <li>
+                            <h4>Можем да филтрираме колекции</h4>
+                            <p>Можем да филтрираме дадена колекция, така че да останат в нея само елементи, които 
+                                отговарят на даден критерий (например, да имат конкретен клас).
+                                <div class="row">
+                                    <div class="col-9">
+                                        <figure>
+                                            <img id="i32" src="pictures/filter.PNG" alt="пример за филтри">
+                                            <figcaption>Фиг. 32. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                                Използване на някои функции за селектиране.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </p>
+                            <p>Чрез <strong>.is()</strong> можем да проверяваме дали даден елемент отговаря на някакъв критерий. 
+                                Например, можем да проверим дали даден елемент, който сме извлякли, има конкретен клас. .is() 
+                                връща булева стойност. Тази функция не е противоположна на <strong>.not()</strong>, защото .not() 
+                                връща нов jQuery обект. <a href="#a6">[1.]</a>
+                                <div class="row">
+                                    <div class="col-9">
+                                        <figure>
+                                            <img id="i33" src="pictures/is().PNG" alt="пример за is()">
+                                            <figcaption>Фиг. 33. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                                Избиране на конкретен елемент.</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Можем да намираме елементите близо до даден елемент или около дадения елемент</h4>
+                            <div class="row">
+                                <div class="col-10">
+                                    <figure>
+                                        <img id="i34" src="pictures/filters.PNG" alt="други филтри">
+                                        <figcaption>Фиг. 34. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                            Някои функции за обхождане на DOM.</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            <p>Можем да добавяме селектор, масив от елементи, HTML символен низ или jQuery обект чрез метода 
+                                <strong>.add()</strong> <a href="#a6">[1.]</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-8">
+                                    <figure>
+                                        <img id="i35" src="pictures/add().PNG" alt="пример за .add()">
+                                        <figcapture>Фиг. 35. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                            Добавяне на елемент към нендареден списък.</figcapture>
+                                    </figure>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <h4>Можем да се връщаме към първоначалната колекция</h4>
+                            <p>Когато обхождаме DOM дървото чрез методи като .parent() или .siblings(), jQuery запзва 
+                                референция към първоначалната селекция, така че да можем да се върнем към нея по-късно. 
+                                Например, ако сме извлекли ненареден списък, правили сме някакви манипулации върху него, но 
+                                после отново искаме да работим със същия ненареден списък, това се прави с метода 
+                                <strong>.end()</strong>
+                                <a href="#a6">[1.]</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-7">
+                                    <figure>
+                                        <img id="i36" src="pictures/end().PNG" alt="пример за .end()">
+                                        <figcaption>Фиг. 36. <a href="#a6">[1.]</a> "jQuery Fundamentals". 
+                                            Пример за използване на .end().</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+
+                            <p>
+                                По аналогичен начин, чрез метода <strong>.addBack()</strong>, можем да добавяме 
+                                първоначалната колекция към 
+                                текущата колекция.
+                            </p>
+                        </li>
+                        <li>
+                            <h4>Можем да добавяме и премахваме методи</h4>
+                            <p>Атрибутът class може да се използва както за улеснение при стилизирането със CSS, така и 
+                                за извличане на jQuery елементи. Чрез методите <strong>addClass()</strong> и 
+                                <strong>removeClass()</strong>, които 
+                                можем да прилагаме към отделни елементи или към цели колекции от елементи, можем да добавяме или 
+                                премахваме класове, като това може да има за резултат, например, промяната на CSS стила при различни 
+                                елементи. <a href="#a6">[1.]</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Можем да използваме и метода <strong>.toggleClass()</strong>, който позволява да се повтарят действията по 
+                                        добавяне и премахване на даден клас. <a href="#a6">[1.]</a>
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <div id="toggleClass-example" class="panels">
+                                        <div class="div-header">
+                                            Кликни тук!
+                                        </div>
+                                        <div class="div-text" id="toggle">
+                                            Пример за .toggleClass().
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <figure>
+                                        <img id="i37" src="pictures/toggleClass-example.PNG" alt="пример за toggleClass">
+                                        <figcaption>Фиг. 37. Екранна снимка. HTML на примера - първоначално няма клас "colorRed"</figcaption>
+                                    </figure>   
+                                </div>
+                                <div class="col-7">
+                                    <figure>
+                                        <img id="i38" src="pictures/toggleClass-example-js.PNG" alt="пример за toggleClass">
+                                        <figcaption>Фиг. 38. Екранна снимка. jQuery код на примера за toggleClass()</figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                            
+                        </li>
+                        <li>
+                            <h4>Можем да поменяме CSS стила на елементите чрез jQuery.</h4>
+                            <p>Когато не е достатъчно да добавяме и премахваме класове, за целта, която искаме да постигнем, 
+                                jQuery предоставя метода <strong>.css()</strong>, чрез който можем директно да променяме 
+                                стила на даден обект или 
+                                колекция. <a href="#a6">[1.]</a>
+                            </p>
+                            <div class="row">
+                                <div class="col-7">
+                                    <figure>
+                                        <img id="i39" src="pictures/css().PNG" alt="пример за .css()">
+                                        <figcapture>Фиг. 39. <a href="#a6">[1.]</a> "jQuery Fundamentals".</figcapture>
+                                    </figure>
+                                </div>
+                                <div class="col-5">
+                                    <p>
+                                        Например, ако искаме да променим стила на елемент в зависимост от 
+                                        ширината на неговия родител, която няма как да знаем предварително, 
+                                        е удобно да го направим със .css(). <a href="#a6">[1.]</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                    
+                    
+                    
+                    
+                </div>
+            </article>
+
+
+            <article id="a3.1">
+                <h2>Работа с AJAX</h2>
+                <!-- <img src="pictures/memejQuery.jpg" alt="меме за jQuery" style="margin-left: auto; margin-right: auto; margin-bottom: 2%; display: block;"> -->
+                <p>AJAX - "асинхронен JavaScript и XML" - е средство за зареждане на данни от сървър без
+                    да е нужно презареждане на страницата. AJAX използва вградената в браузъра XMLHttpRequest
+                    (XHR) функционалност за подаване на заявки към сървъра и след това обработка на данните, които 
+                    сървърът връща. <a href="#a6">[1.]</a>
+                </p>
+                <p> AJAX не е език за програмиране.
+                    Това е комбинация от обект от тип XMLHttpRequest (за да поиска данни от сървъра), 
+                    JavaScript и HTML DOM (за да визуализира или използва поисканите данни).
+                    Ajax е подвеждащо име. Приложенията с него могат да използват XML за пренос на данни, но е 
+                    също толкова разпространено да се транспортират данни като обикновен текст или JSON текст.
+                    AJAX позволява уеб страниците да се актуализират асинхронно чрез обмен на данни с уеб сървър 
+                    зад кулисите. Това означава, че е възможно да се актуализират части от уеб страница, без да се 
+                    презарежда цялата страница. <a href="#a6">[2.]</a>
+                </p>
+                <figure>
+                    <img id="i40" src="pictures/ajax.PNG" alt="какво прави ajax">
+                    <figcaption>Фиг. 40. <a href="#a6">[2.]</a> w3schools. Как работи Ajax.</figcaption>
+                </figure>
+                <h3 id="xmlhttp">Обект от тип XMLHttpRequest и изпращане на заявка към сървър</h3>
+                <p>Всички модерни браузъри (Chrome, Firefox, IE7+, Edge, Safari, Opera) имат вграден обект от тип XMLHttpRequest.
+                    Създаваме такъв обект по стандартния начин <strong>var xhttp = new XMLHttpRequest();</strong>. 
+                    Нека да разгледаме какви методи и свойства има този обект. <a href="#a6">[2.]</a>
+                </p>
+                <figure>
+                    <table>
+                        <h4 id="table1" style="text-align: center;">Методи на обект от тип XMLHttpRequest</h4>
+                        <tr>
+                            <th>Метод</th>
+                            <th>Описание</th>
+                        </tr>
+                        <tr>
+                            <td>new XMLHttpRequest()</td>
+                            <td>Създава нов обект от тип XMLHttpRequest</td>
+                        </tr>
+                        <tr>
+                            <td>abort()</td>
+                            <td>Отменя настоящата заявка</td>
+                        </tr>
+                        <tr>
+                            <td>getAllResponseHeaders()</td>
+                            <td>Връща заглавна информация</td>
+                        </tr>
+                        <tr>
+                            <td>getResponseHeader()</td>
+                            <td>Връща специфична заглавна информация</td>
+                        </tr>
+                        <tr>
+                            <td>open(method, url, async, user, psw)
+                            </td>
+                            <td>Задава спцификите на заявката - <br>
+    
+                                <strong>метод</strong>: дали е GET или POST заявка; <br>
+                                <strong>url</strong>: местоположението на файла; <br>
+                                <strong>async</strong>: true (асинхронна) или false (синхронна); <br> 
+                                <strong>user</strong>: потребителско име (по избор); <br>
+                                <strong>psw</strong>: парола (по избор)</td>
+                        </tr>
+                        <tr>
+                            <td>send()</td>
+                            <td>Изпраща заявката към сървъра.
+                                (Използва се за GET заявки)</td>
+                        </tr>
+                        <tr>
+                            <td>send(string)</td>
+                            <td>Изпраща заявката към сървъра.
+                                (Използва се за POST заявки)</td>
+                        </tr>
+                        <tr>
+                            <td>setRequestHeader()</td>
+                            <td>Добавя двойка етикет/стойност към заглавието</td>
+                        </tr>
+                    </table>
+                    <figcaption style="text-align: center;">
+                        Таблица 1. <a href="#a6">[2.]</a> w3schools
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <table>
+                        <h4 id="table2" style="text-align: center;">Свойства на обект от тип XMLHttpRequest</h4>
+                        <tr>
+                            <th>Свойство</th>
+                            <th>Описание</th>
+                        </tr>
+                        <tr>
+                            <td>onreadystatechange</td>
+                            <td>Дефинира коя функция да се изпълни, когато свойството readyState се промени.</td>
+                        </tr>
+                        <tr>
+                            <td>readyState</td>
+                            <td>Пази статуса на XMLHttpRequest - <br>
+                                <strong>0</strong>: заявката не е инициализирана;<br> 
+                                <strong>1</strong>: установена е връзка със сървъра; <br>
+                                <strong>2</strong>: заявката е получена; <br>
+                                <strong>3</strong>: заявката се обработва; <br>
+                                <strong>4</strong>: заявката е обработена и е готов отговорът</td>
+                        </tr>
+                        <tr>
+                            <td>responseText</td>
+                            <td>Връща данните от отговора като символен низ.</td>
+                        </tr>
+                        <tr>
+                            <td>responseXML</td>
+                            <td>Връща данните от отговора като XML данни</td>
+                        </tr>
+                        <tr>
+                            <td>status</td>
+                            <td>Връща номер на статус на заявка
+                                200: "OK"
+                                403: "Forbidden"
+                                404: "Not Found"</td>
+                        </tr>
+                        <tr>
+                            <td>statusText</td>
+                            <td>Връща текста на статуса (например "OK" или "Not Found")</td>
+                        </tr>
+                    </table>
+
+                    <figcaption style="text-align: center;">
+                        Таблица 2. <a href="#a6">[2.]</a> w3schools.
+                    </figcaption>
+                </figure>
+                
+
+                <p>Вече можем да разгледаме следния пример: </p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i41" src="pictures/exampleAjax.PNG" alt="пример с ajax" style="border: solid 1px;">
+                            <figcaption>Фиг. 41. <a href="#a6">[2.]</a> w3schools. Ajax заявка чрез JavaScript.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-5">
+                        <p>
+                            При кликане на бутона Change Content, се предизвиква фунцията LoadDoc(), 
+                            в която създаваме обект от тип XMLHttpRequest, след което дефинираме функция, която да се извика, 
+                            когато свойството readyState се промени. readyState == 4 означава, че заявката е обработена и 
+                            отговорът е готов, а status == 200 означава, че всичко е наред. Ако тези условия са изпълнени, 
+                            променяме съдържанието в дадения &ltdiv&gt.
+                        </figcaption>
+                        </p>
+                    </div>
+                </div>
+                <p>Изпращаме заявка към сървъра чрез <strong>open()</strong>, като подаваме метода (типа на заявката) - в случая "GET", 
+                    url адреса, чието съдържание искаме да извлечем - "ajax_info.txt" и параметър true или false, 
+                    който указва дали изпращането на заявка към сървъра да е асонхронно. Изпращайки асинхронно, 
+                    JavaScript не трябва да чака отговора на сървъра. Вместо това, може да изпълни други скриптове, 
+                    или да обработи отговора, след като той е готов.
+                </p>
+                <p><strong>Забележка:</strong> събитието <em>onreadystatechange</em> се предизвиква 4 пъти - по един път за всяка 
+                    промяна в readyState! <a href="#a6">[2.]</a></p>
+
+                <h3 id="jquery_ajax">jQuery и Ajax</h3>
+                <p>Нека сега видим как можем да правим това с jQuery. Библиотеката предоставя метода <strong>$.ajax()</strong>, 
+                както и други удобни методи, които улесняват работата с обектите от тип XMLHttpRequest в браузъра. <a href="#a6">[1.]</a>
+                </p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i42" src="pictures/jQuery-ajax2.PNG" alt="jQuery пример с ajax">
+                            <figcaption>Фиг. 42. <a href="#a6">[1.]</a> "jQuery Fundamentals". Ajax заявка с помощта на jQuery.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-5">
+                        <p>На фигура 42 е показано 
+                            как можем директно да подадем конфигурационен обект на тази функция.</p>
+                    </div>
+                </div>
+                <p>
+                    Ако пишем проста заявка и ако не ни интересува обработката на грешки - 
+                    jQuery предоставя няколко „удобни метода“, които ни позволяват да използваме съкратен синтаксис. 
+                    Всеки от тези методи приема URL, незадължителен обект от данни и незадължителна функция 
+                    за обработка на успешна заявка. <a href="#a6">[1.]</a></p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i43" src="pictures/jQuery-ajax3.PNG" alt="jQuery пример с ajax">
+                            <figcaption>Фиг. 43. <a href="#a6">[1.]</a> "jQuery Fundamentals". Примери за .get() и .post().</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-5">
+                        <p>На фигура 43 са показани методите <strong>.get()</strong> и <strong>.post().</strong></p>
+                    </div>
+                </div>
+                <p>
+                    $ .ajax () (и свързаните с тази функция удобни методи) връща jqXHR обект - 
+                    jQuery XML HTTP Request - който има множество мощни методи. 
+                    Можем да направим заявка, използвайки $ .ajax (), и след това да запазим 
+                    върнатия jqXHR-обект в променлива. <a href="#a6">[1.]</a>
+                </p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i44" src="pictures/jQuery-ajax4.PNG" alt="jQuery пример с ajax">
+                            <figcaption>Фиг. 44. <a href="#a6">[1.]</a> "jQuery Fundamentals". Запазваме резултата от .ajax().</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-5">
+                        <p>На фигура 44 запазваме върнатото от .ajax() в променливата <strong>req</strong>.</p>
+                    </div>
+                </div>
+                <p>
+                    Можем да използваме този обект, за да прикачим функция за обратна връзка 
+                    към заявката, дори след като тя е завършена. Например, можем да използваме метода 
+                    <strong>.then ()</strong> на jqXHR-обекта, за да прикачим съответните функции, които обработват 
+                    успех и грешка. Методът <strong>.then ()</strong> приема като аргументи една или две функции. 
+                    Първата функция ще бъде извикана, ако заявката е успешна, а втората ще бъде извикана, ако не е. <a href="#a6">[1.]</a>
+                </p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i45" src="pictures/jQuery-ajax5.PNG" alt="jQuery пример с ajax">
+                            <figcaption>Фиг. 45. <a href="#a6">[1.]</a> "jQuery Fundamentals". then().</figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-5">
+                        <p>На фигура 45 e показан методът <strong>.then()</strong>.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article id="a4">
+                <h2>Събития и обработка на събития с jQuery</h2>
+                <p>jQuery улеснява взаимодействието на потребителя с уеб страницата. 
+                    Това означава, че можем да пишем код, който се изпълнява, когато потребителят 
+                    щракне върху определена част от страницата или когато премести мишката върху даден елемент.
+                    Ето някои методи за обработка на едноименни събития: <a href="#a6">[1.]</a></p>
+                    <div class="row">
+                        <div class="col-4">
+                            <ul>
+                                <li><b>.click()</b></li>
+                                <li><b>.keydown()</b></li>
+                                <li><b>.keypress()</b></li>
+                                <li><b>.keyup()</b></li>
+                                <li><b>.mouseover()</b></li>
+                                <li><b>.mouseout()</b></li>
+                                <li><b>.mouseenter()</b></li>
+                                <li><b>.mouseleave()</b></li>
+                                <li><b>.scroll()</b></li>
+                                <li><b>.focus()</b></li>
+                                <li><b>.blur()</b></li>
+                                <li><b>.resize()</b></li>
+                            </ul>
+                        </div>
+                        <div class="col-8">
+                            <img src="pictures/picture2.png" alt="картинка">
+                        </div>
+                    </div>
+                    <p>Под повърхността, всички тези методи използват метода <strong>.on()</strong> на jQuery. 
+                        Всъщност ние също можем да го използваме в кода си и това ни дава по-голяма гъвкавост. 
+                        Като първи аргумент, в скобите на метода <strong>.on()</strong>, подаваме името на 
+                        събитието (наприемр, 'mouseon'), а като втори аргумент - функцията манипулатор. <a href="#a6">[1.]</a><br>
+                        Ето и пример за това:
+                    </p>
+                    <div class="row">
+                        <div class="col-3">
+                            <button id="exampleMouseOver">Постави мишката тук</button>
+                        </div>
+                        <div class="col-4">
+                            <div id="printHere" style="border: solid 2px;">
+                                <p style="padding: 2%;">Друго съдържание ще бъде поставено тук!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <figure>
+                                <img id="i46" src="pictures/newcontent.PNG" alt="пример с .on()">
+                                <figcaption>Фиг. 46. Екранна снимка. Пример за .on().</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                
+                <p>Ако изпълним пък кода от фигура 47, функцията <strong>.trigger()</strong> ще провокира действието, което сме указали 
+                върху елемента, който сме указали, дори без да се е извършило конкретното събитие. <a href="#a6">[1.]</a></p>
+                <div class="row">
+                    <div class="col-7">
+                        <figure>
+                            <img id="i47" src="pictures/trigger.PNG" alt="пример с .trigger()">
+                            <figcaption>Фиг. 47. Екранна снимка. Функция .trigger().</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p>
+                    По същия начин, чрез функцията <strong>.off()</strong>, приложена към елемент от DOM дървото, към който е прикачена 
+                    реакция на събитие, можем да "разкачим" тази реакция.
+                </p>
+                <p>Да си представим, че имаме ситуация, в кoято искаме да "прикачим" някакви събития, и след това искаме 
+                    да "разкачим" някои от реакциите на тези събития. Ако го направим по начина, показан на фигура 48, 
+                    това ще "разкачи" всички реакции на събитието 'click' от всички елементи <mark>&ltli&gt</mark>. 
+                    Ако прикачим реакция, използвайки <strong>именувано събитие</strong>, тогава можем да се насочим специфично към 
+                    тази реакция на това събитие. <a href="#a6">[1.]</a> </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <figure>
+                                <img id="i48" src="pictures/wrongCode.PNG" alt="грешен код">
+                                <figcaption>Фиг. 48. <a href="#a6">[1.]</a> "jQuery Fundamentals". "Разкачане" на събитие click.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure>
+                                <img id="i49" src="pictures/correctCode.PNG" alt="правилен код">
+                                <figcaption>Фиг. 49. <a href="#a6">[1.]</a> "jQuery Fundamentals". "Разкачане" на именувано събитие.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                <h3>Прикрепяне на множество събития наведнъж</h3>
+                <p>Друго предимство на използването на <strong>.on()</strong>, е възможността за свързване 
+                    с множество събития наведнъж. Например, може да искате да стартирате същия код, 
+                    когато потребител превърта прозореца или когато потребител преоразмерява прозореца. 
+                    Методът <strong>.on()</strong> ви позволява да предадете и двете събития - в разделен с 
+                    интервал низ - последван от функцията, с която искате да обработвате и двете събития. <a href="#a6">[1.]</a>
+                </p>
+                <div class="row">
+                    <div class="col-4" >
+                        <p>Въведи символ от клавиатурата или приплъзни надолу и виж какво ще стане!</p>
+                        <textarea type="text" id="multipleEvents" style="height: 60%;">Lorem ipsum, dolor sit amet consectetur adipisicing 
+                            elit. Omnis hic adipisci, placeat atque aliquid dolorem magnam molestiae, ducimus eius maiores 
+                            repellat eaque quas veritatis at dolor corrupti eveniet sed voluptatum?</textarea>
+                    </div>
+                    <div class="col-8">
+                        <figure>
+                            <img id="i50" src="pictures/multipleEvents.PNG" alt="пример за прикачване на множество събития">
+                            <figcaption>Фиг. 50. Екранна снимка. Прикачване на две събития.</figcaption>
+                        </figure>
+                    </div>
+                    
+                </div>
+            </article>
+
+            <article id="a5">
+                <div class="container">
+                    <div id="jumbotron" style="margin: auto;">
+                        <h2 class="h2">Ефекти с jQuery</h2>
+                        <h3 id="pr1">Пример 1 - Някои функции в jQuery</h3>
+                        <p>В следващия пример са използвани функциите <strong>.toggle()</strong>, <strong>.slideToggle()</strong>, 
+                            <strong>.fadeToggle()</strong> и промяна на текста чрез <strong>.html()</strong></p>
+                        <div class="row">
+                            <div class="col-3">
+                                <button class="btn" id="btn1">Бутон 1</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn" id="btn2">Бутон 2</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn " id="btn3">Бутон 3</button>
+                            </div>
+                            <div class="col-3">
+                                <button class="btn" id="btn4">Бутон 4</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="panels">
+                        <div class="col-3">
+
+                            <div id="panel1" class="panels">
+                                <div class="div-header">
+                                    Панел 1
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="col-3">
+                            <div id="panel2" class="panels">
+                                <div class="div-header">
+                                    Панел 2
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="panel3" class="panels">
+                                <div class="div-header">
+                                    Панел 3
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="panel4" class="panels">
+                                <div class="div-header">
+                                    Панел 4
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i51" src="pictures/firstExample_code.PNG" alt="ефекти с jQuery">
+                                <figcapture>Фиг. 51. Екранна снимка. Използване на някои функции за анимиране в jQuery.</figcapture>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <p>Чрез метода <strong>.on()</strong> прикачваме събитието 'click' към всеки от панелите 
+                                и конкретна реакция с гореизброените методи, за да се види как работят. Аргументът, които 
+                                подаваме на <strong>.toggle()</strong>, <strong>.slideToggle()</strong> и
+                                <strong>.fadeToggle()</strong> е число, което указва за колко милисекунди да се извърши 
+                                даденото действие.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 id="pr2">Пример 2 - "DRY"</h3>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <button class="buttons1 btn" data-boxId="box1" id="b1">Бутон 1</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="buttons1 btn" data-boxId="box2" id="b2">Бутон 2</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="buttons1 btn" data-boxId="box3" id="b3">Бутон 3</button>
+                        </div>
+                        <div class="col-3">
+                            <button class="buttons1 btn" data-boxId="box4" id="b4">Бутон 4</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div id="box1"class="panels">
+                                <div class="div-header">
+                                    Кутия 1
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="col-3">
+                            <div id="box2" class="panels">
+                                <div class="div-header">
+                                    Кутия 2
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="box3" class="panels">
+                                <div class="div-header">
+                                    Кутия 3
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div id="box4" class="panels">
+                                <div class="div-header">
+                                    Кутия 4
+                                </div>
+                                <div class="div-text">
+                                    Съдържание
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <figure>
+                                <img id="i52" src="pictures/primer2-v1.PNG" alt="пример2-версия1">
+                                <figcaption>Фиг. 52. Екранна снимка. Можем да прикачим това събитие, към всеки бутон 
+                                    по отделно, но...</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-6">
+                            <figure>
+                                <img id="i53" src="pictures/primer2-v2.PNG" alt="примeр2-версия2">
+                                <figcaption>Фиг. 53. Екранна снимка. Ако следваме правилото "Не се повтаряй!" <strong>("Do not reapeat yourself - DRY")</strong>, 
+                                    то този код е доста по-изчистен. За целта е нужно да добавим в тага на всеки бутон 
+                                    <strong>data-boxId="box1"</strong>, според атрибута id на всяка кутийка. Така свързваме бутона с 
+                                    конкретен елемент. <a href="#a6">[6.]</a></figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <h3 id="pr3">Пример 3 - Обхождане на DOM</h3>
+                    <div class="row">
+                        <div class="col-3">
+                            <ul class="ul">
+                                <li class="li">едно</li>
+                                <li class="li">две</li>
+                                <li class="li">
+                                    <ul class="ul">
+                                        <li class="li">1</li>
+                                        <li class="li">2</li>
+                                        <li class="li">3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p><strong>$('li')</strong> ще върне колекция от 6 елемента, защото са толкова елементите 
+                                &ltli&gt</p>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i54" src="pictures/exampleUL1.PNG" alt="пример 3 - HTML">
+                                <figcaption>Фиг. 54. Екранна снимка. HTML на списъка вляво.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <p>
+                                <b>
+                                console.log($(".li").first()); <br>
+                                console.log($(".li").eq(0)); <br>
+                                console.log($(".li").eq(1)); <br>
+                                console.log($(".ul:first").children()); <br>
+                                console.log($(".li:first").siblings()); <br>
+                                console.log($(".li:first").parent()); <br>
+                                console.log($(".li").eq(4).parent()); <br>
+                                console.log($(".li").eq(4).parent().parent()); <br>
+                                console.log($(".li").eq(4).parent().parent().prev()); <br>
+                            </b>
+                            </p>
+                        </div>
+                        <p>С Ctrl+Shift+J можем да разгледаме резултата от кода в дясно.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-3" id="DIV">
+                            <ul class="list">
+                                <li>едно</li>
+                                <li class="special">две</li>
+                                <li>
+                                    <ul class="sublist">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Щракни върху някой от елементите от този списък и виж какво ще изчезне.</p>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i55" src="pictures/exampleUL2.PNG" alt="html на ul отляво">
+                                <figcaption>Фиг. 55. Екранна снимка. HTML на списъка вляво.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-4">
+                            <figure>
+                                <img id="i56" src="pictures/domtrav.PNG" alt="пример 3 - премахване на елементи">
+                                <figcaption>Фиг. 56. Екранна снимка. Кодът, изпълняващ функционалността.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5" id="DIV1">
+                            <ul class="list">
+                                <li>едно</li>
+                                <li class="special">две</li>
+                                <li>
+                                    <ul class="sublist">
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Щракни върху някои от елементите от списъка, за да видиш 
+                                как работи този код.</p>
+                        </div>
+                        <div class="col-7">
+                            <figure>
+                                <img id="i57" src="pictures/addClass1.PNG" alt="пример 3 - добавяне на клас">
+                                <figcaption>Фиг. 57. Екранна снимка. <strong>Две</strong> е червено, защото има клас <strong>.special</strong>, 
+                                    който има такъв CSS стил. </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5" id="DIV2">
+                            <ul class="list">
+                                <li>едно</li>
+                                <li class="special">две</li>
+                                <li>
+                                    <ul class="sublist">
+                                        <li class="special">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Върху който и елемент от този списък да щракнем, елементите с клас <strong>special</strong> ще изчезнат.</p>
+                        </div>
+                        <div class="col-7">
+                            <figure>
+                                <img id="i58" src="pictures/filterexample.PNG" alt="изчезващи елементи с даден клас">
+                                <figcaption>Фиг. 58. Екранна снимка. Функционалността за списъка вляво.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5" id="DIV3">
+                            <ul class="list">
+                                <li>едно</li>
+                                <li class="special">две</li>
+                                <li>
+                                    <ul class="sublist">
+                                        <li class="special">1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p>Щракни върху някои от елементите от списъка, за да видиш 
+                                как работи този код.</p>
+                        </div>
+                        <div class="col-7">
+                            <figure>
+                                <img id="i59" src="pictures/alertspecial.PNG" alt="скриване и показване на съобщение">
+                                <figcaption>Фиг. 59. Екранна снимка. Ако щракнем върху елемент от подлиста, ще изчезне целият подлист. Това 
+                                    е така, защото имаме прикачена реакция на събитие и към елементите от подсписъка, и към 
+                                    третия елемент от основния списък.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                <p><a href="#a6">[6.]</a></p>
+            </article>
+
+            <article id="a5.1">
+                <h2>Сравнение между чист JavaScript и jQuery</h2>
+                <div class="jumbotron">
+                    <h3 id="diff1">По отношение на селекторите</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i60" src="pictures/diff2.PNG" alt="намиране на елемент по id - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 60. <a href="#a6">[2.]</a> w3schools. Намиране на елемент по id - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i61" src="pictures/diff1.PNG" alt="намиране на елемент по id - jQUery" class="diffrences">
+                                <figcaption>Фиг. 61. <a href="#a6">[2.]</a> w3schools. Намиране на елемент по id - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff2">По отношение на имената на таговете</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img  id="i62" src="pictures/diff4.PNG" alt="намиране на елемент по tag name - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 62. <a href="#a6">[2.]</a> w3schools. Намиране на елемент по tag name - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i63" src="pictures/diff3.PNG" alt="намиране на елемент по tag name - jQUery" class="diffrences">
+                                <figcaption>Фиг. 63. <a href="#a6">[2.]</a> w3schools. Намиране на елемент по tag name - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff3">По отношение на имената на класовете</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i64" src="pictures/diff6.PNG" alt="Извличане на елементи по class name - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 64. <a href="#a6">[2.]</a> w3schools. Извличане на елементи по class name - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i65" src="pictures/diff5.PNG" alt="Извличане на елементи по class name - jQUery" class="diffrences">
+                                <figcaption>Фиг. 65. <a href="#a6">[2.]</a> w3schools. Извличане на елементи по class name - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff4">По отношение на CSS селекторите</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i66" src="pictures/diff8.PNG" alt="намиране на елемент чрез CSS selectors - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 66. <a href="#a6">[2.]</a> w3schools. Намиране на елемент чрез css селектори - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i67" src="pictures/diff7.PNG" alt="намиране на елемент чрез CSS selectors - jQUery" class="diffrences">
+                                <figcaption>Фиг. 67. <a href="#a6">[2.]</a> w3schools. Намиране на елемент чрез css селектори - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+
+                    <h3 id="diff5">По отношение на установяване на текстовото съдържание</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i68" src="pictures/diff10.PNG" alt="установяване на текстовото съдържание - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 68. <a href="#a6">[2.]</a> w3schools. Установяване на текстовото съдържание - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i69" src="pictures/diff9.PNG" alt="установяване на текстовото съдържание - jQUery" class="diffrences">
+                                <figcaption>Фиг. 69. <a href="#a6">[2.]</a> w3schools. Установяване на текстовото съдържание - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff6">По отношение на извличане на текстово съдържание</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i70" src="pictures/diff12.PNG" alt="извличане на текстово съдържание - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 70. <a href="#a6">[2.]</a> w3schools. Извличане на текстово съдържание - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i71" src="pictures/diff11.PNG" alt="извличане на текстово съдържание - jQUery" class="diffrences">
+                                <figcaption>Фиг. 71. <a href="#a6">[2.]</a> w3schools. Извличане на текстово съдържание - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff7">По отношение на установяване на HTML съдържание</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i72" src="pictures/diff14.PNG" alt="установяване на HTML съдържание - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 72. <a href="#a6">[2.]</a> w3schools. Установяване на HTML съдържание - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i73" src="pictures/diff13.PNG" alt="установяване на HTML съдържание - jQuery" class="diffrences">
+                                <figcaption>Фиг. 73. <a href="#a6">[2.]</a> w3schools. Установяване на HTML съдържание - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff8">По отношение на извличане на HTML съдържание</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i74" src="pictures/diff16.PNG" alt="извличане на HTML съдържание - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 74. <a href="#a6">[2.]</a> w3schools. Извличане на HTML съдържание - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i75" src="pictures/diff15.PNG" alt="извличане на HTML съдържание - jQUery" class="diffrences">
+                                <figcaption>Фиг. 75. <a href="#a6">[2.]</a> w3schools. Извличане на HTML съдържание - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff9">По отношение на скриване на HTML елементи</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i76" src="pictures/diff18.PNG" alt="скриване на HTML елементи - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 76. <a href="#a6">[2.]</a> w3schools. Скриване на HTML елементи - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i77" src="pictures/diff17.PNG" alt="скриване на HTML елементи - jQuery" class="diffrences">
+                                <figcaption>Фиг. 77. <a href="#a6">[2.]</a> w3schools. Скриване на HTML елементи - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff10">По отношение на показване на HTML елементи</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i78" src="pictures/diff20.PNG" alt="показване на HTML елементи - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 78. <a href="#a6">[2.]</a> w3schools. Показване на HTML елементи - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i79" src="pictures/diff19.PNG" alt="показване на HTML елементи - jQUery" class="diffrences">
+                                <figcaption>Фиг. 79. <a href="#a6">[2.]</a> w3schools. Показване на HTML елементи - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff11">По отношение на стилизирането на HTML елементи</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i80" src="pictures/diff22.PNG" alt="стилизирането на HTML елементи - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 80. <a href="#a6">[2.]</a> w3schools. Стилизирането на HTML елементи - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img  id="i81" src="pictures/diff21.PNG" alt="стилизирането на HTML елементи - jQUery" class="diffrences">
+                                <figcaption>Фиг. 81. <a href="#a6">[2.]</a> w3schools. Стилизирането на HTML елементи - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff12">По отношение на премахване на HTML елементи</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i82" src="pictures/diff24.PNG" alt="премахване на HTML елементи - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 82. <a href="#a6">[2.]</a> w3schools. Премахване на HTML елементи - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i83" src="pictures/diff23.PNG" alt="премахване на HTML елементи - jQUery" class="diffrences">
+                                <figcaption>Фиг. 83. <a href="#a6">[2.]</a> w3schools. Премахване на HTML елементи - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff12">По отношение на добавяне на HTML елементи</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i84" src="pictures/diff24.1.PNG" alt="премахване на HTML елементи - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 84. <a href="#a6">[2.]</a> w3schools. Добавяне на HTML елементи - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i85" src="pictures/diff23.1.PNG" alt="премахване на HTML елементи - jQUery" class="diffrences">
+                                <figcaption>Фиг. 85. <a href="#a6">[2.]</a> w3schools. Добавяне на HTML елементи - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h3 id="diff13">По отношение на достъпване на родителски HTML елементи</h3>
+                    <div class="row">
+                        <div class="col-7">
+                            <figure>
+                                <img id="i86" src="pictures/diff26.PNG" alt="достъпване на родителски HTML елементи - JavaScript" class="diffrences">
+                                <figcaption>Фиг. 86. <a href="#a6">[2.]</a> w3schools. Достъпване на родителски HTML елементи - JavaScript.</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col-5">
+                            <figure>
+                                <img id="i87" src="pictures/diff25.PNG" alt="достъпване на родителски HTML елементи - jQUery" class="diffrences">
+                                <figcaption>Фиг. 87. <a href="#a6">[2.]</a> w3schools. Достъпване на родителски HTML елементи - jQuery.</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+
+            <article id = "a6">
+                <h2>Източници</h2>
+                <p>
+                    [1.] Rebecca Murphey, jQuery Fundamentals, публикувано на 16.12.2011 
+                        <br>
+                        <a href="http://jqfundamentals.com/chapter/javascript-basics" target="_blank">
+                            http://jqfundamentals.com/chapter/javascript-basics
+                        </a>
+                        <br>
+                        <a href="http://jqfundamentals.com/chapter/jquery-basics" target="_blank">
+                            http://jqfundamentals.com/chapter/jquery-basics
+                        </a>
+                        <br>
+                        <a href="http://jqfundamentals.com/chapter/traversing-manipulating" target="_blank">
+                            http://jqfundamentals.com/chapter/traversing-manipulating
+                        </a>
+                        <br>
+                        <a href="http://jqfundamentals.com/chapter/ajax-deferreds" target="_blank">
+                            http://jqfundamentals.com/chapter/ajax-deferreds
+                        </a>
+                        <br>
+                        <br>
+                    [2.] Jan Egil Refsnes, w3schools, последно обновено през 2020 г. 
+                        <br>
+                        <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">
+                            https://www.w3schools.com/js/js_htmldom.asp
+                        </a>
+                        <br>
+                        <a href="https://www.w3schools.com/js/js_ajax_intro.asp" target="_blank">
+                            https://www.w3schools.com/js/js_ajax_intro.asp
+                        </a>
+                        <br>
+                        <br>
+                    [3.] Krishna Rungta, Guru99, последно обновено през 2020 г.
+                        <br>
+                        <a href="https://www.guru99.com/difference-equality-strict-operator-javascript.html#2" target="_blank">
+                            https://www.guru99.com/difference-equality-strict-operator-javascript.html#2
+                        </a>
+                        <br>
+                        <br>
+                    [4.] Mohammad Mohtashim, Tutorials Point, последно обновено през 2020 г. 
+                        <br>
+                        <a href="https://www.tutorialspoint.com/jquery/jquery-quick-guide.htm" target="_blank">
+                            https://www.tutorialspoint.com/jquery/jquery-quick-guide.htm
+                        </a>
+                        <br>
+                        <br>
+                    [5.] Dave Methvin, The jQuery Foundation, последно обновено през 2020 г.
+                        <br>
+                        <a href="https://api.jquery.com/clone/" target="_blank">
+                            https://api.jquery.com/clone/
+                        </a>
+                        <br>
+                        <br>
+                    [6.] LearnCode.academy, jQuery Tutorial #1 - jQuery Tutorial for Beginners, публикуван на 22.03.2014 г. 
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=Cc3K2jDdKTo&t=320s" target="_blank">
+                            https://www.youtube.com/watch?v=Cc3K2jDdKTo&t=320s
+                        </a>
+                        <br>
+                </p>
+            </article>
+
+            <articte id="a7">
+                <h2>Фигури</h2>
+                <ul>
+                    <li>
+                        <p>
+                            Фигури 
+                            <a href="#i2">2</a>, <a href="#i3">3</a>, 
+                            <a href="#i8">8</a>, <a href="#i12">12</a>, <a href="#i13">13</a>, <a href="#i14">14</a>, 
+                            <a href="#i16">16</a>, <a href="#i17">17</a>, <a href="#i18">18</a>, <a href="#i19">19</a>, 
+                            <a href="#i20">20</a>, <a href="#i21">21</a>, <a href="#i22">22</a>, 
+                            <a href="#i25">25</a>, <a href="#i26">26</a>, <a href="#i27">27</a>, <a href="#i28">28</a>, 
+                            <a href="#i31">31</a>, <a href="#i32">32</a>, <a href="#i33">33</a>, <a href="#i34">34</a>, 
+                            <a href="#i35">35</a>, <a href="#i36">36</a>, <a href="#i39">39</a>, 
+                            <a href="#i42">42</a>, <a href="#i43">43</a>, <a href="#i44">44</a>, <a href="#i45">45</a>, 
+                            <a href="#i48">48</a>, <a href="#i49">49</a> са взети от източник <a href="#a6">[1.]</a>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Фигури 
+                            <a href="#i9">9</a>, <a href="#i10">10</a>, 
+                            <a href="#i40">40</a>, <a href="#i41">41</a>, 
+                            <a href="#i60">60</a>, <a href="#i61">61</a>, <a href="#i62">62</a>, 
+                            <a href="#i63">63</a>, <a href="#i64">64</a>, <a href="#i65">65</a>, 
+                            <a href="#i66">66</a>, <a href="#i67">67</a>, <a href="#i68">68</a>, 
+                            <a href="#i69">69</a>, <a href="#i70">70</a>, <a href="#i71">71</a>, 
+                            <a href="#i72">72</a>, <a href="#i73">73</a>, <a href="#i74">74</a>, 
+                            <a href="#i75">75</a>, <a href="#i76">76</a>, <a href="#i77">77</a>, 
+                            <a href="#i78">78</a>, <a href="#i79">79</a>, <a href="#i80">80</a>, 
+                            <a href="#i81">81</a>, <a href="#i82">82</a>, <a href="#i83">83</a>, 
+                            <a href="#i84">84</a>, <a href="#i85">85</a>, <a href="#i86">86</a>, 
+                            <a href="#i87">87</a> са взети от източник <a href="#a6">[2.]</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Фигури 
+                            <a href="#i1">1</a>, <a href="#i4">4</a>, <a href="#i5">5</a>, 
+                            <a href="#i6">6</a>, <a href="#i7">7</a>, <a href="#i11">11</a>, 
+                            <a href="#i15">15</a>, <a href="#i23">23</a>, <a href="#i24">24</a>, 
+                            <a href="#i29">29</a>, <a href="#i37">37</a>, <a href="#i38">38</a>, 
+                            <a href="#i46">46</a>, <a href="#i47">47</a>, <a href="#i50">50</a>, 
+                            <a href="#i51">51</a>, <a href="#i52">52</a>, <a href="#i53">53</a>, 
+                            <a href="#i54">54</a>, <a href="#i55">55</a>, <a href="#i56">56</a>, 
+                            <a href="#i57">57</a>, <a href="#i58">58</a>, <a href="#i59">59</a> 
+                            са екранни снимки (собствен код).
+                        </p>
+                    </li>
+                </ul>
+            </articte>
+
+            <article id="a8">
+                <h2>Таблици</h2>
+                <ul>
+                    <li><a href="#table1">Таблица 1.</a> Методи на обект от тип XMLHttpRequest. Взета е от източник <a href="#a6">[2.]</a></li>
+                    <li><a href="#table2">Таблица 2.</a> Свойства на обект от тип XMLHttpRequest. Взета е от източник <a href="#a6">[2.]</a></li>
+                </ul>
+            </article>
+
+            <article id="a9">
+                <h2>За автора</h2>
+                <div class="row">
+                    <!-- <div class="col-3">
+                        <img src="pictures/facebook_profile_picture.jpg" alt="снимка">
+                    </div> -->
+                    <div class="col-7">
+                        <p id="aboutme">
+                            <strong>Име:</strong> Ралица Георгиева Димитрова<br>
+                            <strong>Факултетен номер:</strong> 81580<br>
+                            <strong>Специалност:</strong> Компютърни науки<br>
+                            <strong>Група:</strong> 2<br>
+                            <strong>Курс:</strong> IV<br>
+                            <strong>Email:</strong> raly_g_98@abv.bg
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            </div>
+        </div>
+       </div>  
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous"></script>
+
+    <!-- <script src="jquery-3.5.1.min.js"></script> -->
+
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="script_DOM_JS.js"></script>
+    <script src="script_DOM_jQuery.js"></script>
+
+</body>
+</html>
